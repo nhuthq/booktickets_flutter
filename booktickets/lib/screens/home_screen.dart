@@ -7,8 +7,26 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("New Home Screen"),
+    return Scaffold(
+      backgroundColor: Color(0xFFeeedf2),
+      body: ListView(
+        children: [
+          Container(
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Text("Good morning")
+                    Container(
+                      child: ,
+                    )
+                  ],
+                )
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
