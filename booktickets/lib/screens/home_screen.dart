@@ -16,10 +16,8 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Text("Good morning")
-                    Container(
-                      child: ,
-                    )
+                    Text("Good morning"),
+                    Image.asset("assets/images/img_1.png")
                   ],
                 )
               ],
