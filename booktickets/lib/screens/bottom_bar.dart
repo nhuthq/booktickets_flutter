@@ -1,3 +1,7 @@
+import 'package:booktickets/screens/home_screen.dart';
+import 'package:booktickets/screens/profile_screen.dart';
+import 'package:booktickets/screens/search_screen.dart';
+import 'package:booktickets/screens/tickets_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 
@@ -11,10 +15,10 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int _selectedTabIndex = 0;
   static final List<Widget> _widgetOptions = <Widget>[
-    const Text("Home"),
-    const Text("Search"),
-    const Text("Tickets"),
-    const Text("Profile"),
+    const HomeScreen(),
+    const SearchScreen(),
+    const TicketsScreen(),
+    const ProfileScreen()
   ];
 
   void _onItemTapped(int index) {
@@ -36,6 +40,7 @@ class _BottomBarState extends State<BottomBar> {
         currentIndex: _selectedTabIndex,
         onTap: _onItemTapped,
         elevation: 10,
+        type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: Colors.blueGrey,
