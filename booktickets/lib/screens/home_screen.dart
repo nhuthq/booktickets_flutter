@@ -1,4 +1,5 @@
 import 'package:booktickets/utils/app_styles.dart';
+import 'package:booktickets/widgets/ticket_widget.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -50,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       const Icon(
-                        FluentIcons.search_32_regular,
+                        FluentIcons.search_20_filled,
                       ),
                       Text(
                         "Search",
@@ -58,10 +59,23 @@ class HomeScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                )
+                ),
+                const Gap(40),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Upcoming Flights", style: Styles.headLineStyle2,),
+                    InkWell(
+                      onTap: () {},
+                      child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primary)),
+                    )
+                  ],
+                ),
               ],
             ),
-          )
+          ),
+          const Gap(15),
+          const TicketWidget(),
         ],
       ),
     );
