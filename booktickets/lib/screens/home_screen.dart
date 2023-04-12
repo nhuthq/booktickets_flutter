@@ -1,3 +1,4 @@
+import 'package:booktickets/utils/app_info_list.dart';
 import 'package:booktickets/utils/app_styles.dart';
 import 'package:booktickets/widgets/hotel_widget.dart';
 import 'package:booktickets/widgets/ticket_widget.dart';
@@ -104,12 +105,11 @@ class HomeScreen extends StatelessWidget {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(children: [
-              const HotelWidget(),
-              const HotelWidget(),
-              const HotelWidget(),
-              const HotelWidget(),
-            ],)
+            child: Row(
+              children: hotelList
+                      .map((hotelItem) => HotelWidget(hotel: hotelItem))
+                      .toList()
+            )
           )
         ],
       ),
