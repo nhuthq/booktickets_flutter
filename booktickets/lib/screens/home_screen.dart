@@ -67,10 +67,15 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Upcoming Flights", style: Styles.headLineStyle2,),
+                    Text(
+                      "Upcoming Flights",
+                      style: Styles.headLineStyle2,
+                    ),
                     InkWell(
                       onTap: () {},
-                      child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primary)),
+                      child: Text("View all",
+                          style:
+                              Styles.textStyle.copyWith(color: Styles.primary)),
                     )
                   ],
                 ),
@@ -82,10 +87,9 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.only(right: 20),
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: ticketList
-                .map((ticketItem) => TicketWidget(ticket: ticketItem))
-                .toList()
-            ),
+                children: ticketList
+                    .map((ticketItem) => TicketWidget(ticket: ticketItem))
+                    .toList()),
           ),
           const Gap(15),
           Container(
@@ -93,24 +97,26 @@ class HomeScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Hotels", style: Styles.headLineStyle2,),
+                Text(
+                  "Hotels",
+                  style: Styles.headLineStyle2,
+                ),
                 InkWell(
                   onTap: () {},
-                  child: Text("View all", style: Styles.textStyle.copyWith(color: Styles.primary)),
+                  child: Text("View all",
+                      style: Styles.textStyle.copyWith(color: Styles.primary)),
                 ),
-                ],
-              ),
+              ],
+            ),
           ),
           const Gap(15),
           SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              children: hotelList
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                  children: hotelList
                       .map((hotelItem) => HotelWidget(hotel: hotelItem))
-                      .toList()
-            )
-          )
+                      .toList()))
         ],
       ),
     );

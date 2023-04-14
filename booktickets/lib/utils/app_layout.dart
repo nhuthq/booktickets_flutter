@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/instance_manager.dart';
 import 'package:get/route_manager.dart';
 
 class AppLayout {
@@ -17,7 +16,7 @@ class AppLayout {
 
   static getHeight(double pixels) {
     double x = getScreenHeight() / pixels;
-    return getScreenHeight()/ x;
+    return getScreenHeight() / x;
   }
 
   static getWidth(double pixels) {

@@ -8,9 +8,8 @@ class ThickWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(3),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(width: 2.5, color: Colors.white)
-      ),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(width: 2.5, color: Colors.white)),
     );
   }
 }
