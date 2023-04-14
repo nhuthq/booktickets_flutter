@@ -1,4 +1,5 @@
 import 'package:booktickets/utils/app_info_list.dart';
+import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/app_styles.dart';
 import 'package:booktickets/widgets/hotel_widget.dart';
 import 'package:booktickets/widgets/ticket_widget.dart';
@@ -32,8 +33,8 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      width: 50,
-                      height: 50,
+                      width: AppLayout.getWidth(50),
+                      height: AppLayout.getHeight(50),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
                           image: const DecorationImage(
