@@ -1,10 +1,11 @@
 import 'package:booktickets/utils/app_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class DoubleTextWidget extends StatelessWidget {
-  const DoubleTextWidget({super.key});
+  final String title;
+  final String subTitle;
+  const DoubleTextWidget(
+      {super.key, required this.title, required this.subTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +13,12 @@ class DoubleTextWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          "Upcoming Flights",
+          title,
           style: Styles.headLineStyle2,
         ),
         InkWell(
           onTap: () {},
-          child: Text("View all",
+          child: Text(subTitle,
               style: Styles.textStyle.copyWith(color: Styles.primary)),
         )
       ],

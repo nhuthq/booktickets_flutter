@@ -1,6 +1,7 @@
 import 'package:booktickets/utils/app_info_list.dart';
 import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/app_styles.dart';
+import 'package:booktickets/widgets/double_text_widgets.dart';
 import 'package:booktickets/widgets/hotel_widget.dart';
 import 'package:booktickets/widgets/ticket_widget.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
@@ -64,21 +65,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const Gap(40),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Upcoming Flights",
-                      style: Styles.headLineStyle2,
-                    ),
-                    InkWell(
-                      onTap: () {},
-                      child: Text("View all",
-                          style:
-                              Styles.textStyle.copyWith(color: Styles.primary)),
-                    )
-                  ],
-                ),
+                const DoubleTextWidget(title: "Upcoming Flights", subTitle: "View all"),
               ],
             ),
           ),
@@ -94,20 +81,7 @@ class HomeScreen extends StatelessWidget {
           const Gap(15),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Hotels",
-                  style: Styles.headLineStyle2,
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: Text("View all",
-                      style: Styles.textStyle.copyWith(color: Styles.primary)),
-                ),
-              ],
-            ),
+            child: const DoubleTextWidget(title: "Hotels", subTitle: "View all"),
           ),
           const Gap(15),
           SingleChildScrollView(
