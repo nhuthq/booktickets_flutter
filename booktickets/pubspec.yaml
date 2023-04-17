@@ -37,6 +37,7 @@ dependencies:
   fluentui_system_icons: ^1.1.198
   get:
   gap: ^2.0.0
+  auto_size_text: ^3.0.0 
 
 dev_dependencies:
   flutter_test:

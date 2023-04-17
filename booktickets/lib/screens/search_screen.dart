@@ -93,8 +93,13 @@ class SearchScreen extends StatelessWidget {
               title: "Upcoming Flights", subTitle: "View all"),
           Gap(AppLayout.getHeight(15)),
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
+                // height: AppLayout.getHeight(400),
+                width: (size.width * 0.5) - 27.5,
+                padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(AppLayout.getWidth(20)),
@@ -104,9 +109,6 @@ class SearchScreen extends StatelessWidget {
                           blurRadius: 1,
                           spreadRadius: 1),
                     ]),
-                padding: const EdgeInsets.all(15),
-                height: AppLayout.getHeight(400),
-                width: size.width * 0.42,
                 child: Column(
                   children: [
                     Container(
@@ -125,42 +127,97 @@ class SearchScreen extends StatelessWidget {
                     Text(
                       "20% discount on the early booking of this flight. Don't missing",
                       style: Styles.headLineStyle2,
-                    )
+                    ),
                   ],
                 ),
               ),
               Gap(AppLayout.getHeight(15)),
               Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  Stack(
+                    children: [
+                      Container(
+                        width: (size.width * 0.5) - 27.5,
+                        padding: EdgeInsets.symmetric(
+                            vertical: AppLayout.getHeight(15),
+                            horizontal: AppLayout.getWidth(15)),
+                        decoration: BoxDecoration(
+                            color: const Color(0xFF3AB8B8),
+                            borderRadius:
+                                BorderRadius.circular(AppLayout.getHeight(18))),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Discount\nfor survey',
+                              style: Styles.headLineStyle2.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
+                            Gap(AppLayout.getHeight(15)),
+                            Text(
+                              'Take the survey about our services and get discount',
+                              style: Styles.headLineStyle2.copyWith(
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                          right: -35,
+                          top: -45,
+                          child: Container(
+                            padding: EdgeInsets.all(AppLayout.getHeight(30)),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                    width: 18, color: const Color(0xFF189999)),
+                                color: Colors.transparent),
+                          ))
+                    ],
+                  ),
+                  Gap(AppLayout.getHeight(15)),
                   Container(
-                    width: size.width * 0.44,
-                    height: AppLayout.getHeight(174),
+                    width: (size.width * 0.5) - 27.5,
                     padding: EdgeInsets.symmetric(
-                        vertical: AppLayout.getHeight(15),
-                        horizontal: AppLayout.getWidth(15)),
+                      vertical: AppLayout.getHeight(15),
+                      horizontal: AppLayout.getWidth(15),
+                    ),
                     decoration: BoxDecoration(
-                        color: const Color(0xFF3AB8B8),
-                        borderRadius:
-                            BorderRadius.circular(AppLayout.getHeight(18))),
+                        color: Styles.orangeColor,
+                        borderRadius: BorderRadiusDirectional.circular(
+                            AppLayout.getHeight(18))),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Discount\nfor survey',
+                          "Take love",
                           style: Styles.headLineStyle2.copyWith(
-                              fontWeight: FontWeight.bold, color: Colors.white),
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.center,
                         ),
                         Gap(AppLayout.getHeight(15)),
-                        Text(
-                          'Take the survey about our services and get discount',
-                          style: Styles.headLineStyle2.copyWith(
-                              fontWeight: FontWeight.bold, color: Colors.white),
-                        ),
+                        RichText(
+                            text: const TextSpan(children: [
+                          TextSpan(
+                            text: "😍",
+                            style: TextStyle(fontSize: 38),
+                          ),
+                          TextSpan(
+                            text: "😍",
+                            style: TextStyle(fontSize: 50),
+                          ),
+                          TextSpan(
+                            text: "😍",
+                            style: TextStyle(fontSize: 38),
+                          ),
+                        ]))
                       ],
                     ),
-                  )
+                  ),
                 ],
-              )
+              ),
             ],
           )
         ],
