@@ -1,6 +1,8 @@
 import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/app_styles.dart';
+import 'package:booktickets/widgets/layout_builder_widget.dart';
 import 'package:booktickets/widgets/thick_widget.dart';
+import 'package:booktickets/widgets/ticket_info_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -14,9 +16,9 @@ class TicketWidget extends StatelessWidget {
     final size = AppLayout.getSize(context);
     return SizedBox(
       width: size.width * 0.85,
-      height: AppLayout.getHeight(200),
+      // height: AppLayout.getHeight(200),
       child: Container(
-        margin: EdgeInsets.only(left: AppLayout.getHeight(16)),
+        margin: EdgeInsets.only(left: AppLayout.getHeight(isColor ? 16 : 0)),
         child: Column(
           children: [
             // Showing the blue part of card/ticket
@@ -44,31 +46,11 @@ class TicketWidget extends StatelessWidget {
                       Expanded(
                           child: Stack(children: [
                         SizedBox(
-                          height: AppLayout.getHeight(24),
-                          child: LayoutBuilder(
-                            builder: (BuildContext context,
-                                BoxConstraints constraints) {
-                              return Flex(
-                                  direction: Axis.horizontal,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: List.generate(
-                                    (constraints.constrainWidth() / 6).floor(),
-                                    (index) => SizedBox(
-                                      width: 3,
-                                      height: 1,
-                                      child: DecoratedBox(
-                                        decoration: BoxDecoration(
-                                            color: isColor
-                                                ? Colors.white
-                                                : Colors.grey.shade300),
-                                      ),
-                                    ),
-                                  ));
-                            },
-                          ),
-                        ),
+                            height: AppLayout.getHeight(24),
+                            child: LayoutBuilderWidget(
+                              section: 8,
+                              isColor: isColor,
+                            )),
                         Center(
                           child: Transform.rotate(
                             angle: 1.5,
@@ -178,71 +160,33 @@ class TicketWidget extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                   color: isColor ? Styles.orangeColor : Colors.white,
-                  borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(21),
-                      bottomRight: Radius.circular(21))),
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(isColor ? 21 : 0),
+                      bottomRight: Radius.circular(isColor ? 21 : 0))),
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(ticket['date'],
-                              style: Styles.headLineStyle3.copyWith(
-                                  color: isColor
-                                      ? Colors.white
-                                      : Styles.textColor)),
-                          const Gap(5),
-                          Text(
-                            "Date",
-                            style: Styles.headLineStyle4.copyWith(
-                                color: isColor
-                                    ? Colors.white
-                                    : Colors.grey.shade500),
-                          )
-                        ],
+                      TicketInfoWidget(
+                        title: "Date",
+                        value: ticket['date'],
+                        isColor: isColor,
+                        alignment: CrossAxisAlignment.start,
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            ticket['departure_time'],
-                            style: Styles.headLineStyle3.copyWith(
-                                color:
-                                    isColor ? Colors.white : Styles.textColor),
-                          ),
-                          const Gap(5),
-                          Text(
-                            "Departure Time",
-                            style: Styles.headLineStyle4.copyWith(
-                                color: isColor
-                                    ? Colors.white
-                                    : Colors.grey.shade500),
-                          )
-                        ],
+                      TicketInfoWidget(
+                        title: "Departure Time",
+                        value: ticket['departure_time'],
+                        isColor: isColor,
+                        alignment: CrossAxisAlignment.center,
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            ticket['number'],
-                            style: Styles.headLineStyle3.copyWith(
-                                color:
-                                    isColor ? Colors.white : Styles.textColor),
-                          ),
-                          const Gap(5),
-                          Text(
-                            "Number",
-                            style: Styles.headLineStyle4.copyWith(
-                                color: isColor
-                                    ? Colors.white
-                                    : Colors.grey.shade500),
-                          )
-                        ],
-                      )
+                      TicketInfoWidget(
+                        title: "Number",
+                        value: ticket['number'],
+                        isColor: isColor,
+                        alignment: CrossAxisAlignment.end,
+                      ),
                     ],
                   )
                 ],
