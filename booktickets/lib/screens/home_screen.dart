@@ -57,6 +57,7 @@ class HomeScreen extends StatelessWidget {
                       const Icon(
                         FluentIcons.search_20_filled,
                       ),
+                      const Gap(10),
                       Text(
                         "Search",
                         style: Styles.headLineStyle4,
@@ -65,7 +66,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const Gap(40),
-                const DoubleTextWidget(title: "Upcoming Flights", subTitle: "View all"),
+                const DoubleTextWidget(
+                    title: "Upcoming Flights", subTitle: "View all"),
               ],
             ),
           ),
@@ -81,7 +83,8 @@ class HomeScreen extends StatelessWidget {
           const Gap(15),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: const DoubleTextWidget(title: "Hotels", subTitle: "View all"),
+            child:
+                const DoubleTextWidget(title: "Hotels", subTitle: "View all"),
           ),
           const Gap(15),
           SingleChildScrollView(
