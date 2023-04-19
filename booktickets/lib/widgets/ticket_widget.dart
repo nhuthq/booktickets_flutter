@@ -16,9 +16,8 @@ class TicketWidget extends StatelessWidget {
     final size = AppLayout.getSize(context);
     return SizedBox(
       width: size.width * 0.85,
-      // height: AppLayout.getHeight(200),
       child: Container(
-        margin: EdgeInsets.only(left: AppLayout.getHeight(isColor ? 16 : 0)),
+        margin: EdgeInsets.only(right: AppLayout.getHeight(isColor ? 20 : 0)),
         child: Column(
           children: [
             // Showing the blue part of card/ticket

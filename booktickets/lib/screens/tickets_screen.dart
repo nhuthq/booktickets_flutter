@@ -150,7 +150,10 @@ class TicketsScreen extends StatelessWidget {
                 ),
               ),
               Gap(AppLayout.getHeight(20)),
-              TicketWidget(ticket: ticketList[1]),
+              Container(
+                padding: const EdgeInsets.only(left: 20),
+                child: TicketWidget(ticket: ticketList[1]),
+              )
             ],
           ),
         ],
