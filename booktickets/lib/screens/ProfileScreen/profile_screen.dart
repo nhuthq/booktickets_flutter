@@ -1,15 +1,22 @@
+import 'package:booktickets/screens/ProfileScreen/profile_provider.dart';
 import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/app_styles.dart';
+import 'package:booktickets/widgets/flight_history_widget.dart';
 import 'package:booktickets/widgets/ticket_info_widget.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:provider/provider.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<ProfileProvider>(context, listen: false);
+    final totalMiles = provider.getTotalMile();
+    final historyList = provider.getFlightHistories();
+
     return Scaffold(
       backgroundColor: Styles.bgColor,
       body: ListView(
@@ -188,7 +195,7 @@ class ProfileScreen extends StatelessWidget {
               children: [
                 Gap(AppLayout.getHeight(15)),
                 Text(
-                  "192802",
+                  totalMiles.toString(),
                   style: TextStyle(
                     fontSize: 45,
                     fontWeight: FontWeight.w600,
@@ -211,77 +218,11 @@ class ProfileScreen extends StatelessWidget {
                     )
                   ],
                 ),
-                Gap(AppLayout.getHeight(24)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    TicketInfoWidget(
-                      title: "Miles",
-                      value: "23 042",
-                      isColor: false,
-                      alignment: CrossAxisAlignment.start,
-                    ),
-                    TicketInfoWidget(
-                      title: "Received from",
-                      value: "NV Airline",
-                      isColor: false,
-                      alignment: CrossAxisAlignment.start,
-                    )
-                  ],
-                ),
-                Gap(AppLayout.getHeight(24)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    TicketInfoWidget(
-                      title: "Miles",
-                      value: "23 042",
-                      isColor: false,
-                      alignment: CrossAxisAlignment.start,
-                    ),
-                    TicketInfoWidget(
-                      title: "Received from",
-                      value: "NV Airline",
-                      isColor: false,
-                      alignment: CrossAxisAlignment.start,
-                    )
-                  ],
-                ),
-                Gap(AppLayout.getHeight(24)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    TicketInfoWidget(
-                      title: "Miles",
-                      value: "23 042",
-                      isColor: false,
-                      alignment: CrossAxisAlignment.start,
-                    ),
-                    TicketInfoWidget(
-                      title: "Received from",
-                      value: "NV Airline",
-                      isColor: false,
-                      alignment: CrossAxisAlignment.start,
-                    )
-                  ],
-                ),
-                Gap(AppLayout.getHeight(24)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    TicketInfoWidget(
-                      title: "Miles",
-                      value: "23 042",
-                      isColor: false,
-                      alignment: CrossAxisAlignment.start,
-                    ),
-                    TicketInfoWidget(
-                      title: "Received from",
-                      value: "NV Airline",
-                      isColor: false,
-                      alignment: CrossAxisAlignment.start,
-                    )
-                  ],
+                Column(
+                  children: historyList
+                      .map((historyItem) =>
+                          FlightHistoryWidget(flightHistory: historyItem))
+                      .toList(),
                 ),
                 Gap(AppLayout.getHeight(24)),
                 InkWell(

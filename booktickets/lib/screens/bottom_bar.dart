@@ -1,9 +1,11 @@
+import 'package:booktickets/screens/ProfileScreen/profile_provider.dart';
 import 'package:booktickets/screens/home_screen.dart';
-import 'package:booktickets/screens/profile_screen.dart';
+import 'package:booktickets/screens/ProfileScreen/profile_screen.dart';
 import 'package:booktickets/screens/search_screen.dart';
 import 'package:booktickets/screens/tickets_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
+import 'package:provider/provider.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -30,8 +32,13 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: _widgetOptions[_selectedTabIndex],
+      body: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(create: (_) => ProfileProvider()),
+        ],
+        child: Center(
+          child: _widgetOptions[_selectedTabIndex],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedTabIndex,

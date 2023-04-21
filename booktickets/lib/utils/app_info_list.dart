@@ -49,3 +49,35 @@ List<Map<String, dynamic>> ticketList = [
     'number': '23B',
   },
 ];
+
+
+List<Map<String, dynamic>> flightHistoryList = [
+  { 
+    'miles': 2460,
+    'airline': 'VN Airline',
+  },
+  {
+    'miles': 1252,
+    'airline': 'Pacific Airline',
+  },
+  {
+    'miles': 366,
+    'airline': 'Vietjet Airline',
+  },
+  {
+    'miles': 2025,
+    'airline': 'Pacific Airline',
+  },
+  {
+    'miles': 1251,
+    'airline': 'Bamboo Airline',
+  },
+  {
+    'miles': 759,
+    'airline': 'Bamboo Airline',
+  },
+  {
+    'miles': 500,
+    'airline': 'Pacific Airline',
+  },
+];
