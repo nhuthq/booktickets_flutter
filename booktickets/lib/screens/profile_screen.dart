@@ -96,7 +96,81 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
           Gap(AppLayout.getHeight(8)),
-          Divider(color: Colors.grey.shade300,)
+          Divider(
+            color: Colors.grey.shade300,
+          ),
+          Gap(
+            AppLayout.getHeight(18),
+          ),
+          Stack(
+            children: [
+              Container(
+                height: AppLayout.getHeight(90),
+                decoration: BoxDecoration(
+                  color: Styles.primary,
+                  borderRadius: BorderRadius.circular(
+                    AppLayout.getHeight(18),
+                  ),
+                ),
+              ),
+              Positioned(
+                top: -40,
+                right: -45,
+                child: Container(
+                  padding: EdgeInsets.all(
+                    AppLayout.getHeight(30),
+                  ),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      width: 18,
+                      color: const Color(0xFF264CD2),
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.all(18),
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: Colors.white,
+                      maxRadius: 25,
+                      child: Icon(
+                        FluentIcons.lightbulb_filament_24_filled,
+                        color: Styles.primary,
+                        size: 27,
+                      ),
+                    ),
+                    Gap(
+                      AppLayout.getWidth(12),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "You \'v got a new award",
+                          style: Styles.headLineStyle2.copyWith(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(
+                          "You have 25 flights in this year",
+                          style: Styles.headLineStyle2.copyWith(
+                            color: Colors.white.withOpacity(0.9),
+                            fontWeight: FontWeight.w500,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ],
       ),
     );
