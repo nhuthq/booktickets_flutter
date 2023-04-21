@@ -1,5 +1,6 @@
 import 'package:booktickets/utils/app_layout.dart';
 import 'package:booktickets/utils/app_styles.dart';
+import 'package:booktickets/widgets/ticket_info_widget.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -100,7 +101,9 @@ class ProfileScreen extends StatelessWidget {
             color: Colors.grey.shade300,
           ),
           Gap(
-            AppLayout.getHeight(18),
+            AppLayout.getHeight(
+              8,
+            ),
           ),
           Stack(
             children: [
@@ -170,6 +173,129 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+          Gap(
+            AppLayout.getHeight(
+              25,
+            ),
+          ),
+          Text(
+            "Accumulated miles",
+            style: Styles.headLineStyle2,
+          ),
+          Container(
+            child: Column(
+              children: [
+                Gap(AppLayout.getHeight(15)),
+                Text(
+                  "192802",
+                  style: TextStyle(
+                    fontSize: 45,
+                    fontWeight: FontWeight.w600,
+                    color: Styles.textColor,
+                  ),
+                ),
+                Gap(AppLayout.getHeight(24)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Miles accrued",
+                      style: Styles.headLineStyle4
+                          .copyWith(fontSize: 16, color: Colors.grey.shade500),
+                    ),
+                    Text(
+                      "24 Apr 2023",
+                      style: Styles.headLineStyle4
+                          .copyWith(fontSize: 16, color: Colors.grey.shade500),
+                    )
+                  ],
+                ),
+                Gap(AppLayout.getHeight(24)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    TicketInfoWidget(
+                      title: "Miles",
+                      value: "23 042",
+                      isColor: false,
+                      alignment: CrossAxisAlignment.start,
+                    ),
+                    TicketInfoWidget(
+                      title: "Received from",
+                      value: "NV Airline",
+                      isColor: false,
+                      alignment: CrossAxisAlignment.start,
+                    )
+                  ],
+                ),
+                Gap(AppLayout.getHeight(24)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    TicketInfoWidget(
+                      title: "Miles",
+                      value: "23 042",
+                      isColor: false,
+                      alignment: CrossAxisAlignment.start,
+                    ),
+                    TicketInfoWidget(
+                      title: "Received from",
+                      value: "NV Airline",
+                      isColor: false,
+                      alignment: CrossAxisAlignment.start,
+                    )
+                  ],
+                ),
+                Gap(AppLayout.getHeight(24)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    TicketInfoWidget(
+                      title: "Miles",
+                      value: "23 042",
+                      isColor: false,
+                      alignment: CrossAxisAlignment.start,
+                    ),
+                    TicketInfoWidget(
+                      title: "Received from",
+                      value: "NV Airline",
+                      isColor: false,
+                      alignment: CrossAxisAlignment.start,
+                    )
+                  ],
+                ),
+                Gap(AppLayout.getHeight(24)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: const [
+                    TicketInfoWidget(
+                      title: "Miles",
+                      value: "23 042",
+                      isColor: false,
+                      alignment: CrossAxisAlignment.start,
+                    ),
+                    TicketInfoWidget(
+                      title: "Received from",
+                      value: "NV Airline",
+                      isColor: false,
+                      alignment: CrossAxisAlignment.start,
+                    )
+                  ],
+                ),
+                Gap(AppLayout.getHeight(24)),
+                InkWell(
+                  onTap: () {},
+                  child: Center(
+                    child: Text(
+                      "Get more miles",
+                      style: Styles.textStyle.copyWith(
+                          fontWeight: FontWeight.w500, color: Styles.primary),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
